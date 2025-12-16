@@ -164,7 +164,7 @@ We welcome contributions! Here's how:
 
 ## 🪪 License
 
-This project is licensed uner **Apache License 2.0** - See [This License](http://www.apache.org/licenses/LICENSE-2.0) for details. 
+This project is licensed under **Apache License 2.0** - See [This License](http://www.apache.org/licenses/LICENSE-2.0) for details. 
 > [!NOTE]
 > This tool is for educational and planning purposes. Always test in controlled environments before production deployment.
 
