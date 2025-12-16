@@ -162,6 +162,12 @@ We welcome contributions! Here's how:
 - Multi-language support
 - Advanced reporting features
 
+## Contributors 
+
+- **@shann-shannn**
+- **@Kurokibara**
+- **@Kanechiii**
+
 ## 🪪 License
 
 This project is licensed under **Apache License 2.0** - See [This License](http://www.apache.org/licenses/LICENSE-2.0) for details. 
@@ -174,7 +180,3 @@ This project is licensed under **Apache License 2.0** - See [This License](http:
 This tool is designed for educational and network planning purposes. Always verify subnetting calculations in a test environment before implementing in production networks. The developers are not responsible for any network issues arising from the use of this tool.
 
 **Built with** 🫶🏻 | **Visit me on** [Kanechiii](https://github.com/Kanechiii)
-
-
-
-
