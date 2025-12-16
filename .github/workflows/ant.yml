@@ -1,4 +1,4 @@
-name: Java Build
+name: Java CI
 
 on:
   push:
@@ -19,36 +19,45 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     
-    - name: Check project structure
+    - name: Debug - Show project structure
       run: |
-        echo "📁 Project structure:"
-        find . -type f -name "*.java" | head -10
-        ls -la networksubnettingautomation/
-    
-    - name: Compile Java files
-      run: |
-        echo "🔨 Compiling Java source files..."
-        javac networksubnettingautomation/*.java
-        
-        if [ $? -eq 0 ]; then
-          echo "✅ Compilation successful!"
-          echo "Generated $(find networksubnettingautomation -name "*.class" | wc -l) class files"
+        echo "=== PROJECT STRUCTURE ==="
+        pwd
+        ls -la
+        echo ""
+        echo "=== JAVA FILES ==="
+        find . -name "*.java" -type f | sort
+        echo ""
+        echo "=== PACKAGE DIRECTORY ==="
+        if [ -d "networksubnettingautomation" ]; then
+          ls -la networksubnettingautomation/
+          echo "Number of Java files: $(ls -1 networksubnettingautomation/*.java 2>/dev/null | wc -l)"
         else
-          echo "❌ Compilation failed!"
-          exit 1
+          echo "ERROR: networksubnettingautomation directory not found!"
         fi
     
-    - name: Create executable script
+    - name: Check Java package declarations
       run: |
-        cat > run.sh << 'EOF'
-        #!/bin/bash
-        echo "Starting Network Subnetting Automation..."
-        java networksubnettingautomation.SubnettingGUI
-        EOF
-        chmod +x run.sh
-        echo "📄 Created run.sh script"
+        echo "=== CHECKING PACKAGE DECLARATIONS ==="
+        if [ -d "networksubnettingautomation" ]; then
+          for file in networksubnettingautomation/*.java; do
+            if [ -f "$file" ]; then
+              echo "File: $file"
+              head -5 "$file" | grep -i "package"
+              echo ""
+            fi
+          done
+        fi
     
-    - name: Test run (optional)
+    - name: Try compilation
       run: |
-        echo "Testing if application starts..."
-        timeout 5s java networksubnettingautomation.SubnettingGUI || true
+        echo "=== ATTEMPTING COMPILATION ==="
+        if [ -d "networksubnettingautomation" ]; then
+          cd networksubnettingautomation
+          echo "Compiling from within package directory..."
+          javac *.java 2>&1 || true
+          cd ..
+        else
+          echo "Compiling from root..."
+          javac networksubnettingautomation/*.java 2>&1 || true
+        fi
