@@ -131,9 +131,12 @@ network-subnetting-automation/
 │   ├── SubnettingGUI.java        # Main GUI interface
 │   └── (Supporting files)
 ├── resources/                    # Images and other assets
+├── .github/workflows
+├── nbproject
+├── LICENSE                       # Apache License 2.0
 ├── README.md                     # This documentation
-├── .gitignore                    # Git ignore rules
-└── LICENSE                       # Apache License 2.0
+├── build.xml
+└── manifest.mf
 ```
 
 ## GUI Features
