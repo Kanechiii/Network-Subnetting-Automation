@@ -167,6 +167,7 @@ We welcome contributions! Here's how:
 - **@shann-shannn**
 - **@Kurokibara**
 - **@Kanechiii**
+- **@Lanzii-Devv**
 
 ## 🪪 License
 
