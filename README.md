@@ -127,13 +127,13 @@ private final Color BACKGROUND_COLOR = new Color(245, 245, 245); // Light Gray
 ```test
 network-subnetting-automation/
 ├── networksubnettingautomation/
-│   ├── SubnetCalculator.java     # Core calculation logic
+│   ├── SubnetCalculator.java     # Main Logic Calculation
 │   ├── SubnettingGUI.java        # Main GUI interface
 │   └── (Supporting files)
-├── resources/                    # Images and assets
+├── resources/                    # Images and other assets
 ├── README.md                     # This documentation
 ├── .gitignore                    # Git ignore rules
-└── LICENSE                       # MIT License
+└── LICENSE                       # Apache License 2.0
 ```
 
 ## GUI Features
